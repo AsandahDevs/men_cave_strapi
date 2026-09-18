@@ -1,0 +1,13 @@
+.git
+.env
+.tmp
+.strapi
+node_modules
+build
+dist
+coverage
+exports
+npm-debug.log*
+Dockerfile*
+compose*.yaml
+README.md

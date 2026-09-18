@@ -1,0 +1,17 @@
+services:
+  strapi:
+    build:
+      context: .
+      target: production
+    env_file:
+      - .env
+    ports:
+      - "${PORT:-1337}:1337"
+    volumes:
+      - strapi-data:/opt/app/.tmp
+      - strapi-uploads:/opt/app/public/uploads
+    restart: unless-stopped
+
+volumes:
+  strapi-data:
+  strapi-uploads:
