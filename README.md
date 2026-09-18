@@ -22,6 +22,16 @@ The named `strapi-data` and `strapi-uploads` volumes retain database content and
 
 For logs, use `docker compose logs -f strapi`.
 
+## Docker development mode
+
+Development mode bind-mounts this repository and runs Strapi with watch mode enabled:
+
+```sh
+docker compose -f compose.yaml -f compose.dev.yaml up --build
+```
+
+Changes to the application source will reload Strapi automatically. Dependencies live in the `strapi-node-modules` Docker volume, while the database and uploads continue to use the same persistent volumes as the production configuration.
+
 ## Local development
 
 Install dependencies and start Strapi in watch mode:

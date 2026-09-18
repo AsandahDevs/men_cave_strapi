@@ -1,0 +1,19 @@
+# Development override. Start it with:
+# docker compose -f compose.yaml -f compose.dev.yaml up --build
+services:
+  strapi:
+    build:
+      target: dependencies
+    environment:
+      NODE_ENV: development
+    command: npm run develop
+    volumes:
+      # Source changes on the host trigger Strapi's watch mode in the container.
+      - .:/opt/app
+      # Keep Linux-built dependencies in Docker rather than sharing host node_modules.
+      - strapi-node-modules:/opt/app/node_modules
+      - strapi-data:/opt/app/.tmp
+      - strapi-uploads:/opt/app/public/uploads
+
+volumes:
+  strapi-node-modules:
