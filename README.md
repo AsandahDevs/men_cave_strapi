@@ -10,7 +10,7 @@ Strapi 5 CMS, packaged to run in Docker with persistent SQLite and upload volume
    cp .env.example .env
    ```
 
-2. Build and start the service:
+2. Build and start the development service:
 
    ```sh
    docker compose up --build -d
@@ -18,19 +18,9 @@ Strapi 5 CMS, packaged to run in Docker with persistent SQLite and upload volume
 
 3. Open `http://localhost:1337/admin` and create the initial administrator account.
 
-The named `strapi-data` and `strapi-uploads` volumes retain database content and media across container recreation. Stop the service with `docker compose down`; add `--volumes` only when you intentionally want to erase that data.
+This runs Strapi in watch mode, so source changes reload automatically. The named `strapi-node-modules`, `strapi-data`, and `strapi-uploads` volumes retain dependencies, database content, and media across container recreation. Stop the service with `docker compose down`; add `--volumes` only when you intentionally want to erase that data.
 
 For logs, use `docker compose logs -f strapi`.
-
-## Docker development mode
-
-Development mode bind-mounts this repository and runs Strapi with watch mode enabled:
-
-```sh
-docker compose -f compose.yaml -f compose.dev.yaml up --build
-```
-
-Changes to the application source will reload Strapi automatically. Dependencies live in the `strapi-node-modules` Docker volume, while the database and uploads continue to use the same persistent volumes as the production configuration.
 
 ## Local development
 

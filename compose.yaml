@@ -1,0 +1,25 @@
+services:
+  strapi:
+    build:
+      context: .
+      target: dependencies
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: development
+    command: npm run develop
+    ports:
+      - "${PORT:-1337}:1337"
+    volumes:
+      # Reload Strapi when source files change on the host.
+      - .:/opt/app
+      # Keep container-built dependencies separate from host node_modules.
+      - strapi-node-modules:/opt/app/node_modules
+      - strapi-data:/opt/app/.tmp
+      - strapi-uploads:/opt/app/public/uploads
+    restart: unless-stopped
+
+volumes:
+  strapi-node-modules:
+  strapi-data:
+  strapi-uploads:
