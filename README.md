@@ -22,6 +22,14 @@ This runs Strapi in watch mode, so source changes reload automatically. The name
 
 For logs, use `docker compose logs -f strapi`.
 
+### Content API CORS
+
+The Content API allows the local frontend origins in `.env.example`. Add your deployed frontend domain to the comma-separated `CORS_ORIGINS` value before production deployment, for example:
+
+```env
+CORS_ORIGINS=https://www.example.com
+```
+
 ## Local development
 
 Install dependencies and start Strapi in watch mode:
