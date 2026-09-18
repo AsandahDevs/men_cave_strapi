@@ -454,6 +454,18 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    category: Schema.Attribute.Enumeration<
+      [
+        'beard essentials',
+        'fragrance',
+        'tops',
+        'footwear',
+        'accessories',
+        'jackets',
+        'suits',
+        'pants',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
