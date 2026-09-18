@@ -443,6 +443,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAnnouncementsMediaAnnouncementsMedia
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'announcements_medias';
+  info: {
+    displayName: 'Announcements Media';
+    pluralName: 'announcements-medias';
+    singularName: 'announcements-media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    homepage: Schema.Attribute.Relation<'oneToOne', 'api::homepage.homepage'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::announcements-media.announcements-media'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -472,6 +505,39 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFeaturedContentMediaFeaturedContentMedia
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'featured_content_medias';
+  info: {
+    displayName: 'Featured Content Media';
+    pluralName: 'featured-content-medias';
+    singularName: 'featured-content-media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    homepage: Schema.Attribute.Relation<'oneToOne', 'api::homepage.homepage'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::featured-content-media.featured-content-media'
+    > &
+      Schema.Attribute.Private;
+    media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomepageHomepage extends Struct.CollectionTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -484,14 +550,19 @@ export interface ApiHomepageHomepage extends Struct.CollectionTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Blocks;
+    announcements: Schema.Attribute.Blocks;
+    announcements_media: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::announcements-media.announcements-media'
+    >;
     contact_us: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     featured_content: Schema.Attribute.Blocks;
-    featured_images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    featured_content_media: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::featured-content-media.featured-content-media'
     >;
     hero_section: Schema.Attribute.Blocks;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1057,7 +1128,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::announcements-media.announcements-media': ApiAnnouncementsMediaAnnouncementsMedia;
       'api::category.category': ApiCategoryCategory;
+      'api::featured-content-media.featured-content-media': ApiFeaturedContentMediaFeaturedContentMedia;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::product.product': ApiProductProduct;
       'plugin::content-releases.release': PluginContentReleasesRelease;

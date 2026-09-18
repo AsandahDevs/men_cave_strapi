@@ -20,18 +20,21 @@
     "featured_content": {
       "type": "blocks"
     },
-    "featured_images": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "announcements": {
+      "type": "blocks"
     },
     "contact_us": {
       "type": "blocks"
+    },
+    "announcements_media": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::announcements-media.announcements-media"
+    },
+    "featured_content_media": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::featured-content-media.featured-content-media"
     }
   }
 }

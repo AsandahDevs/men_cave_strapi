@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "featured_content_medias",
+  "info": {
+    "singularName": "featured-content-media",
+    "pluralName": "featured-content-medias",
+    "displayName": "Featured Content Media"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "homepage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::homepage.homepage"
+    }
+  }
+}
