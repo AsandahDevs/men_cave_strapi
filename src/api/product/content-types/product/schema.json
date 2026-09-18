@@ -33,18 +33,11 @@
     "sale": {
       "type": "boolean"
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "beard essentials",
-        "fragrance",
-        "tops",
-        "footwear",
-        "accessories",
-        "jackets",
-        "suits",
-        "pants"
-      ]
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "products"
     }
   }
 }
