@@ -11,7 +11,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewar
       origin: env.array('CORS_ORIGINS', [
         'http://localhost:3000',
         'http://127.0.0.1:3000',
-        'https://mencave.phakade.net'
+        'https://mencave.stock-O.com'
       ]),
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
     },
