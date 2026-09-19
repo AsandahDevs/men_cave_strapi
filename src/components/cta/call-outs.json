@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_cta_call_outs",
+  "info": {
+    "displayName": "Call_Outs",
+    "icon": "volumeUp"
+  },
+  "options": {},
+  "attributes": {
+    "CTA_Content": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

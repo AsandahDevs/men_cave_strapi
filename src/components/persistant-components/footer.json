@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_persistant_components_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "layout"
+  },
+  "options": {},
+  "attributes": {
+    "Footer_Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Footer_Content": {
+      "type": "blocks"
+    }
+  },
+  "config": {}
+}

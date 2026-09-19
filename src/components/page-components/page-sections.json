@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_components_page_sections",
+  "info": {
+    "displayName": "Page_Sections",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "Page_Section_Content": {
+      "type": "blocks",
+      "required": true
+    },
+    "Page_Section_Media_Content": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
