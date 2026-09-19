@@ -10,6 +10,11 @@
       "type": "blocks",
       "required": true
     },
+    "Page_link": {
+      "type": "component",
+      "component": "link-component.link",
+      "repeatable": false
+    },
     "Page_Section_Media_Content": {
       "type": "media",
       "multiple": true,
@@ -19,6 +24,11 @@
         "videos",
         "audios"
       ]
+    },
+    "List_of_products": {
+      "type": "component",
+      "component": "products-componet.products",
+      "repeatable": true
     }
   },
   "config": {}
