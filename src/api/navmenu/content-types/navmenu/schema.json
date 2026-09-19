@@ -1,0 +1,29 @@
+{
+  "kind": "singleType",
+  "collectionName": "navmenus",
+  "info": {
+    "singularName": "navmenu",
+    "pluralName": "navmenus",
+    "displayName": "navigation_menu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "brand_logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "navlinks": {
+      "type": "component",
+      "component": "menu-navigation-links.navlinks",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

@@ -23,6 +23,20 @@ export interface LinkComponentLink extends Struct.ComponentSchema {
   };
 }
 
+export interface MenuNavigationLinksNavlinks extends Struct.ComponentSchema {
+  collectionName: 'components_menu_navigation_links_navlinks';
+  info: {
+    displayName: 'navlinks';
+  };
+  attributes: {
+    external: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    menu_name: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface PageComponentsPageSections extends Struct.ComponentSchema {
   collectionName: 'components_page_components_page_sections';
   info: {
@@ -83,6 +97,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'cta.call-outs': CtaCallOuts;
       'link-component.link': LinkComponentLink;
+      'menu-navigation-links.navlinks': MenuNavigationLinksNavlinks;
       'page-components.page-sections': PageComponentsPageSections;
       'persistant-components.footer': PersistantComponentsFooter;
       'products-componet.products': ProductsComponetProducts;

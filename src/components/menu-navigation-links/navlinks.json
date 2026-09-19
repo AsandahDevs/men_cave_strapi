@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_menu_navigation_links_navlinks",
+  "info": {
+    "displayName": "navlinks"
+  },
+  "options": {},
+  "attributes": {
+    "menu_name": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "external": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "config": {}
+}
