@@ -57,18 +57,6 @@ export interface PageComponentsPageSections extends Struct.ComponentSchema {
   };
 }
 
-export interface PersistantComponentsFooter extends Struct.ComponentSchema {
-  collectionName: 'components_persistant_components_footers';
-  info: {
-    displayName: 'Footer';
-    icon: 'layout';
-  };
-  attributes: {
-    Footer_Content: Schema.Attribute.Blocks;
-    Footer_Logo: Schema.Attribute.Media<'images'>;
-  };
-}
-
 export interface ProductsComponetProducts extends Struct.ComponentSchema {
   collectionName: 'components_products_componet_products';
   info: {
@@ -99,7 +87,6 @@ declare module '@strapi/strapi' {
       'link-component.link': LinkComponentLink;
       'menu-navigation-links.navlinks': MenuNavigationLinksNavlinks;
       'page-components.page-sections': PageComponentsPageSections;
-      'persistant-components.footer': PersistantComponentsFooter;
       'products-componet.products': ProductsComponetProducts;
     }
   }

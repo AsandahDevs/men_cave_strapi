@@ -19,12 +19,6 @@
       "components": [
         "page-components.page-sections"
       ]
-    },
-    "Footer": {
-      "type": "component",
-      "component": "persistant-components.footer",
-      "repeatable": false,
-      "required": true
     }
   }
 }
