@@ -1,29 +1,34 @@
 {
-  "collectionName": "components_products_componet_products",
+  "kind": "collectionType",
+  "collectionName": "products",
   "info": {
+    "singularName": "product",
+    "pluralName": "products",
     "displayName": "Products"
   },
-  "options": {},
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
-    "product_name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "product_desc": {
+    "description": {
       "type": "string",
-      "default": "\"\"",
       "required": true
     },
-    "product_price": {
+    "price": {
       "type": "decimal",
       "required": true
     },
-    "is_sale": {
+    "is_on_sale": {
       "type": "boolean",
       "required": true,
       "default": false
     },
-    "product_image": {
+    "image": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -33,10 +38,9 @@
     },
     "categories": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "api::category.category",
-      "required": true
+      "mappedBy": "products"
     }
-  },
-  "config": {}
+  }
 }

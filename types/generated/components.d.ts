@@ -44,39 +44,12 @@ export interface PageComponentsPageSections extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
-    List_of_products: Schema.Attribute.Component<
-      'products-componet.products',
-      true
-    >;
     Page_link: Schema.Attribute.Component<'link-component.link', false>;
     Page_Section_Content: Schema.Attribute.Blocks & Schema.Attribute.Required;
     Page_Section_Media_Content: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-  };
-}
-
-export interface ProductsComponetProducts extends Struct.ComponentSchema {
-  collectionName: 'components_products_componet_products';
-  info: {
-    displayName: 'Products';
-  };
-  attributes: {
-    categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    > &
-      Schema.Attribute.Required;
-    is_sale: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    product_desc: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'""'>;
-    product_image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    product_name: Schema.Attribute.String & Schema.Attribute.Required;
-    product_price: Schema.Attribute.Decimal & Schema.Attribute.Required;
   };
 }
 
@@ -87,7 +60,6 @@ declare module '@strapi/strapi' {
       'link-component.link': LinkComponentLink;
       'menu-navigation-links.navlinks': MenuNavigationLinksNavlinks;
       'page-components.page-sections': PageComponentsPageSections;
-      'products-componet.products': ProductsComponetProducts;
     }
   }
 }

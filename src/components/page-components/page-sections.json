@@ -24,11 +24,6 @@
         "videos",
         "audios"
       ]
-    },
-    "List_of_products": {
-      "type": "component",
-      "component": "products-componet.products",
-      "repeatable": true
     }
   },
   "config": {}
