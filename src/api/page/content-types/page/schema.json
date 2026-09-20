@@ -14,6 +14,11 @@
     "Title": {
       "type": "string"
     },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    },
     "Sectional_Content": {
       "type": "dynamiczone",
       "components": [

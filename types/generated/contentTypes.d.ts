@@ -555,6 +555,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     Sectional_Content: Schema.Attribute.DynamicZone<
       ['page-components.page-sections']
     >;
+    slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
