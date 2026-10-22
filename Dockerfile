@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM node:24-bookworm-slim AS base
+FROM node:24.22.1-bookworm-slim AS base
 WORKDIR /opt/app
 
 # better-sqlite3 may need to compile a native binding for the target platform.
@@ -17,7 +17,7 @@ COPY . .
 ENV NODE_ENV=production
 RUN npm run build
 
-FROM node:24-bookworm-slim AS production
+FROM node:24.22.1-bookworm-slim AS production
 WORKDIR /opt/app
 ENV NODE_ENV=production
 
